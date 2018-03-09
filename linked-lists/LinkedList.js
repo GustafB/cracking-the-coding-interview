@@ -16,6 +16,7 @@ class LinkedList {
       // Add new node
       next.next = node;
     }
+    return node;
   }
 
   deleteNode(value) {

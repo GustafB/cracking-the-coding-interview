@@ -1,4 +1,5 @@
 const LinkedList = require('./LinkedList.js');
+const Node = require(./Lis)
 
 // #### Remove duplicates in an unordered list (with buffer) ####
 const removeDuplicates = (head) => {
