@@ -4,21 +4,20 @@ const Stack = function() {
 }
 
 Stack.prototype.push = function(data) {
-  this.storage.unshift(data);
-  this.size++;
+  this.storage[this.size++] = data;
 };
 
 Stack.prototype.pop = function() {
   let data = null;
-  if (this.size) {
-    data = this.storage.shift();
-    this.size--;
+  if (this.size > 0) {
+    data = this.storage[--this.size];
+    this.storage[this.size] = null
   }
   return data;
 };
 
 Stack.prototype.peek = function() {
-  return this.storage[0] || null;
+  return this.storage[this.size] || null;
 }
 
 Stack.prototype.isEmpty = function() {
@@ -26,3 +25,4 @@ Stack.prototype.isEmpty = function() {
 }
 
 module.exports = Stack;
+
