@@ -1,6 +1,6 @@
 const LinkedList = require('./LinkedList.js');
 
-//#### HASHTABLE (aka object) ####
+//#### BUFFER (object) ####
 
 const findIntersection = (headA, headB) => {
   if (!headA || !headB) return null;
@@ -14,7 +14,7 @@ const findIntersection = (headA, headB) => {
     nodes[node.value] = node;
     c++;
   });
-  
+
   traverseList(headB, (node) => {
     if (nodes[node.value] === node && !found) found = node; 
   });
