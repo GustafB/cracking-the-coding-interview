@@ -9,15 +9,17 @@ SortedStack.prototype.push = function(value) {
   if (this.peek() > value || this.isEmpty()) {
     this._storage.push(value);
   } else {
-    while (this.peek() || this.peek() < value) {
+    // move all elements smaller than insert value to temp
+    while (this.peek() && this.peek() < value) {
       this._temp.push(this._storage.pop());
     }
+    // add new value to storage
     this._storage.push(value);
+    // move temp values back to storage
     while (this._temp.length) {
       this._storage.push(this._temp.pop());
     }
   }
-  console.log(this._storage)
 }
 
 SortedStack.prototype.pop = function() {
