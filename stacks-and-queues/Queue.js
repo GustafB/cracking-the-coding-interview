@@ -1,29 +1,29 @@
 const Queue = function() {
-  this.storage = [];
-  this.size = 0;
-  this.first = 0;
+  this._storage = [];
+  this._size = 0;
+  this._first = 0;
 };
 
 Queue.prototype.enqueue = function(data) {
-  this.storage[this.size++] = data;
-  console.log(this.storage)
+  this._storage[this._size++] = data;
 }
 
 Queue.prototype.dequeue = function() {
   let data = null;
-  if (this.size) {
-    data = this.storage[this.first];
-    this.storage[this.first++] = null;
-    this.size--;
+  if (this._size) {
+    data = this._storage[this._first];
+    this._storage[this._first++] = null;
+    this._size--;
   }
   return data;
 }
 
 Queue.prototype.peek = function() {
-  return this.storage[this.first];
+  return this._storage[this._first];
 }
 
 Queue.prototype.isEmpty = function() {
-  return this.size === 0;
+  return this._size === 0;
 }
 
+module.exports = Queue;
