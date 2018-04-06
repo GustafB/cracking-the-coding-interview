@@ -20,6 +20,7 @@ SortedStack.prototype.push = function(value) {
       this._storage.push(this._temp.pop());
     }
   }
+  console.log(this._storage);
 }
 
 SortedStack.prototype.pop = function() {
@@ -33,3 +34,4 @@ SortedStack.prototype.peek = function() {
 SortedStack.prototype.isEmpty = function() {
   return this._storage.length === 0;
 }
+
