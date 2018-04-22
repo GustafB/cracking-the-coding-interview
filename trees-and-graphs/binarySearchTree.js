@@ -64,14 +64,4 @@ TreeNode.prototype.breadthFirstTraverse = function(cb) {
 }
 
 
-
-
-
-
-let tree = new TreeNode(2);
-tree.insert(1);
-tree.insert(3);
-tree.insert(5);
-tree.insert(4);
-
-tree.iterativeTraverse(a => console.log(a.val));
+module.exports = TreeNode;
